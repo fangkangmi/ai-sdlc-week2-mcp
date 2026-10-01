@@ -1,4 +1,5 @@
 server.py
 wire.log
+mcp-config.json
 __pycache__/
 .ipynb_checkpoints/

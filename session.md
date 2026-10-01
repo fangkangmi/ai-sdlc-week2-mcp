@@ -324,7 +324,7 @@ customer data, it goes to the model provider, and the same policy applies as for
 | 0 | **Setup check: now, together** |
 | 1 | Write the server: `get_claim` |
 | 2 | Talk to it by hand, no AI |
-| 3 | Connect your Copilot |
+| 3 | Connect Copilot CLI |
 | 4 | Three tool-design tries |
 | 5 | Plant the note, then stop it in code |
 | 6 | Design one tool for your own work |
@@ -332,10 +332,10 @@ customer data, it goes to the model provider, and the same policy applies as for
 `mcp_homework.ipynb` · about an hour · answers at the bottom. Bring Part 6 next week.
 
 **Say:** Don't skip this. They open the notebook you sent, pick their Python as the kernel, and run
-Part 0 while you watch; it should say READY. If not: `pip install "mcp>=2.2" ipykernel` through the
+Part 0 while you watch; it should say READY. Then `copilot --version` in VS Code's terminal. If not: `pip install "mcp>=2.2" ipykernel` through the
 company's package mirror, restart the kernel, run Part 0 again. If the mirror has no `mcp` 2.x, note it
-and raise it. Parts 0–2 need only `mcp`; Part 3 onwards also needs MCP allowed in their Copilot (the org
-policy "MCP servers in Copilot"). Book the 15-minute follow-up before the call ends.
+and raise it. Parts 0–2 need only `mcp`; Part 3 onwards also needs Copilot CLI, which their organisation can turn
+off, and MCP allowed in their Copilot (the org policy "MCP servers in Copilot"). Book the 15-minute follow-up before the call ends.
 
 #### Slide 22: Next week
 
@@ -446,23 +446,22 @@ The homework's Part 2 does the same through a small Python helper.
 
 `homework/` is self-contained; zip it and send it before the session. It holds `mcp_homework.ipynb`,
 `data/` (with `claims.original.json` for the reset cell), `planted-note.txt`, `wiretap.py` and a
-README. The notebook writes `server.py` itself. It needs Python 3.10+ with `mcp>=2.2` and `ipykernel`,
-and VS Code's Jupyter extension; no API key. Tested on 2026-10-01 with `mcp` 2.2.0 and Python 3.12,
+README. The notebook writes `server.py` and `mcp-config.json` itself. It needs Python 3.10+ with
+`mcp>=2.2` and `ipykernel`, VS Code's Jupyter extension, and Copilot CLI for Parts 3 to 5; no API key.
+Copilot CLI runs in VS Code's terminal in the homework folder itself. `--available-tools` limits the
+model to the claims tools, so it can't read the data or the answers in that folder. The printed
+command was checked with Copilot CLI 1.0.90 in interactive mode on 2026-10-01. Tested on 2026-10-01 with `mcp` 2.2.0 and Python 3.12,
 executed end to end both unsolved and with the answer key filled in. Its data copies `claims-mcp/data/`;
 keep them in sync.
-
-`solutions/mcp_homework_solved.ipynb` is the worked version: every exercise done, every cell run, and
-Parts 3 to 5 answered from the recorded runs below. It sits outside `homework/`, so the zip stays the
-exercise.
 
 | Part | What they do | Needs |
 | --- | --- | --- |
 | 0 | Setup check (in the session) | Python, `mcp` |
 | 1 | Write `get_claim` in a `%%writefile server.py` cell | |
 | 2 | `talk()` sends raw JSON lines: tools/list, tools/call, a `ToolError`, the old handshake | |
-| 3 | Paste the printed config into `.vscode/mcp.json` in a second VS Code window; ask Copilot | MCP allowed in their Copilot |
-| 4 | CLM-1010, rename to `fetch`, no hint | Copilot |
-| 5 | Uncomment `update_claim_status`, plant the note, triage, then write the guard (Exercise 3) | Copilot |
+| 3 | Run the printed `copilot` command in VS Code's terminal, in the homework folder; ask Copilot | Copilot CLI, MCP allowed |
+| 4 | CLM-1010, rename to `fetch`, start without `--available-tools` | Copilot CLI |
+| 5 | Uncomment `update_claim_status`, plant the note, triage, then write the guard (Exercise 3) and ask Copilot to approve | Copilot CLI |
 | 6 | Design one read-only tool for their own work | |
 
 ### Recorded runs

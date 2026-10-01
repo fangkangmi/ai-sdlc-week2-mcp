@@ -4,3 +4,4 @@ __pycache__/
 .ipynb_checkpoints/
 homework/server.py
 homework/wire.log
+homework/mcp-config.json

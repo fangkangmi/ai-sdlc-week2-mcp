@@ -47,12 +47,9 @@ questions is in [`mcp-brief.md`](mcp-brief.md).
 
 Zip [`homework/`](homework/) and send it to the colleague before the session; they run its setup check
 with you at the end. It's a notebook in seven parts (setup check, write `get_claim`, talk to the server
-by hand, connect Copilot, tool design, the planted note, design their own tool), with answers at the
-bottom. It needs no API key: their own Copilot is the client.
-
-The worked version, with every exercise done and every cell run, is
-[`solutions/mcp_homework_solved.ipynb`](solutions/mcp_homework_solved.ipynb). Its Copilot answers
-(Parts 3 to 5) quote the recorded runs in `runs/`. It's outside `homework/`, so the zip stays the exercise.
+by hand, connect Copilot CLI, tool design, the planted note, design their own tool), with answers at the
+bottom. It needs no API key: their own Copilot is the client, through Copilot CLI in VS Code's terminal,
+in the homework folder.
 
 ## What's here
 
@@ -64,7 +61,6 @@ The worked version, with every exercise done and every cell run, is
 | `wiretap.py` | Sits between Copilot and the server and logs every MCP message to `wire.log` |
 | `planted-description*.txt` | The customer's note for the second demo (a deliberate prompt-injection payload) |
 | `homework/` | The colleague's notebook kit |
-| `solutions/` | The homework notebook with every exercise done and run |
 | `session.md`, `mcp-brief.md` | The coach's plan and background |
 | `slides/` | Source of the deck (one HTML file per slide, speaker notes included) |
 | `runs/` | 22 recorded runs of the demo through Codex and the Copilot CLI (29 Sep to 1 Oct 2026; GPT-6-Luna in all but one) |
@@ -76,4 +72,4 @@ The worked version, with every exercise done and every cell run, is
   (`MCPServer`, `ToolError`) and speaks MCP 2026-07-28 as well as older revisions.
 - VS Code with GitHub Copilot in Agent mode. On Copilot Business or Enterprise, the organisation policy
   "MCP servers in Copilot" must be on; it is off by default.
-- For the homework: VS Code's Jupyter extension and `ipykernel`.
+- For the homework: VS Code's Jupyter extension, `ipykernel`, and Copilot CLI (`copilot`) for Parts 3 to 5.
