@@ -62,7 +62,7 @@ in the homework folder.
 | `planted-description*.txt` | The customer's note for the second demo (a deliberate prompt-injection payload) |
 | `homework/` | The colleague's notebook kit |
 | `session.md`, `mcp-brief.md` | The coach's plan and background |
-| `slides/` | Source of the deck (one HTML file per slide, speaker notes included) |
+| `slides/` | The deck to present, `hand-roll-an-mcp-server.pptx` (speaker notes included), and its source: one HTML file per slide |
 | `runs/` | 22 recorded runs of the demo through Codex and the Copilot CLI (29 Sep to 1 Oct 2026; GPT-6-Luna in all but one) |
 | `run-mcp-demo.sh`, `run-copilot-demo.sh`, `probe_claims.py` | Record more runs (bash; needs the `codex` or `copilot` CLI). `SERVER=<folder>` runs a changed copy of the server |
 
