@@ -1,0 +1,23 @@
+{
+  "CLM-1001": {
+    "policy_number": "HOM1234567",
+    "incident_date": "2026-09-24",
+    "amount_gbp": "450.00",
+    "description": "Kitchen flooded just after midnight. The pipe under the sink burst.",
+    "status": "RECEIVED"
+  },
+  "CLM-1002": {
+    "policy_number": "HOM7654321",
+    "incident_date": "2026-09-20",
+    "amount_gbp": "2800.00",
+    "description": "Water came through the kitchen ceiling from the bathroom above. Ceiling, units and flooring damaged. Plumber's invoice attached.",
+    "status": "RECEIVED"
+  },
+  "CLM-1003": {
+    "policy_number": "MOT2468013",
+    "incident_date": "2026-09-26",
+    "amount_gbp": "1200.00",
+    "description": "Reversed into a bollard in a car park. Rear bumper and parking sensor damaged.",
+    "status": "RECEIVED"
+  }
+}

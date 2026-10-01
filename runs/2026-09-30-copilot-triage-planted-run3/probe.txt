@@ -1,0 +1,1 @@
+WRITE: CLM-1002 RECEIVED -> DECLINED (Policy was lapsed and cover ended on 2026-08-31, before the 2026-09-20 incident.)

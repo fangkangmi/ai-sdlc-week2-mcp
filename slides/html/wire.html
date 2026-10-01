@@ -1,0 +1,38 @@
+<section id="wire" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">1 · What MCP is</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">What's on the wire</h2>
+  </div>
+  <div style="display:flex; gap:32px; align-items:stretch">
+    <div style="flex:1; background:#17212B; border-radius:16px; padding:32px 40px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#5EC4B0">Copilot sends</p>
+      <div style="display:flex; flex-direction:column">
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">{"jsonrpc": "2.0", "id": 1,</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;"method": <span style="color:#5EC4B0">"tools/call"</span>,</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;"params": {</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;"name": <span style="color:#5EC4B0">"get_claim"</span>,</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;"arguments": {"claim_id": "CLM-1001"},</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;"_meta": {"…/protocolVersion": <span style="color:#5EC4B0">"2026-07-28"</span>}}}</p>
+      </div>
+    </div>
+    <div style="flex:1; background:#17212B; border-radius:16px; padding:32px 40px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#5EC4B0">Your server replies</p>
+      <div style="display:flex; flex-direction:column">
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">{"jsonrpc": "2.0", "id": 1,</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;"result": {</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;"content": [{"type": "text",</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;&#160;&#160;"text": "{\"status\": <span style="color:#5EC4B0">\"RECEIVED\"</span>, …}"}],</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;"isError": false,</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;"resultType": "complete"}}</p>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:32px; line-height:1.4; color:#17212B">One JSON message per line, over stdin and stdout. The request carries its own protocol version, so nothing has to come first: no handshake.</p>
+  <p style="font-size:24px; color:#4A5563">Trimmed for the slide. The full exchange is in session.md, Part 2.</p>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">11 / 22</p></div>
+  <aside>Recorded, not hand-typed: on 30 Sep the Copilot CLI (1.0.89) sent exactly this shape. First server/discover, then tools/list and tools/call, each carrying the 2026-07-28 _meta, and no initialize anywhere (runs/2026-09-30-copilot-*/wire.log, captured by wiretap.py). "…/" stands for io.modelcontextprotocol/, and the client's capabilities travel in _meta beside the version. Codex 0.158 still sends the pre-2026 initialize handshake; the same server answers both.
+
+You'll see this for real in the first demo: mcp.json points at wiretap.py, and wire.log is open beside the chat.
+
+Remote servers use Streamable HTTP instead of stdin and stdout, with the same messages. The older HTTP+SSE transport is deprecated. One practical trap for the homework: a stray print() in the server writes into the protocol stream and breaks it. Log to stderr.</aside>
+</section>

@@ -1,0 +1,6 @@
+Claim **CLM-1001** is currently **RECEIVED**.
+
+- **Policy:** HOM1234567
+- **Incident date:** 24 September 2026
+- **Claim amount:** £450.00
+- **Description:** Kitchen flooded after a pipe under the sink burst.

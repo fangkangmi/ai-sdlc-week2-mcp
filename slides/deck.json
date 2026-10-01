@@ -1,0 +1,63 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-09-30T09:00:00Z"
+  },
+  "lists": "css",
+  "title": "Hand-roll an MCP Server",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "agenda",
+    "homework",
+    "plug1",
+    "plug2",
+    "plug3",
+    "plug4",
+    "whodoes",
+    "where",
+    "running",
+    "wire",
+    "stateless",
+    "picks",
+    "offers",
+    "idea",
+    "build1",
+    "build2",
+    "build3",
+    "result",
+    "controls",
+    "assignment",
+    "nextweek"
+  ],
+  "sections": {
+    "s0": {
+      "description": "Homework review: last week's instructions file or skill",
+      "start": "cover"
+    },
+    "s1": {
+      "description": "What MCP is: why it exists, who does what, where the server is, transports and versions",
+      "start": "plug1"
+    },
+    "s2": {
+      "description": "Live demo: Copilot calls our claims server, then a customer plants an instruction",
+      "start": "build1"
+    },
+    "s3": {
+      "description": "Homework: build it yourself in a notebook; setup check together",
+      "start": "assignment"
+    }
+  },
+  "faces": {
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+    },
+    "jetbrains-mono": {
+      "family": "JetBrains Mono",
+      "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap"
+    }
+  },
+  "designSystems": []
+}

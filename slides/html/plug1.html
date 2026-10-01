@@ -1,0 +1,14 @@
+<section id="plug1" data-transition="magic" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:16px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">1 · Why MCP exists</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">One agent, one system</h2>
+  <p style="font-size:32px; line-height:1.4; color:#4A5563">Copilot needs claims data, so someone writes the glue code.</p>
+  <p id="lbl-agents" style="position:absolute; left:128px; top:336px; width:372px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#4A5563">Agents</p>
+  <p id="lbl-systems" style="position:absolute; left:1420px; top:336px; width:372px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#4A5563">Systems</p>
+  <p id="count" style="position:absolute; left:560px; top:330px; width:800px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; font-weight:600; text-align:center; color:#17212B">1 integration</p>
+  <x-connector x1="500" y1="620" x2="1420" y2="620" head="none" style="color:#4A5563; border-width:3px"></x-connector>
+  <div id="a-copilot" style="position:absolute; left:128px; top:570px; width:372px; height:100px; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; display:flex; flex-direction:column; justify-content:center; align-items:center"><p style="font-size:32px; font-weight:600; color:#17212B">Copilot</p></div>
+  <div id="s-claims" style="position:absolute; left:1420px; top:570px; width:372px; height:100px; background:#17212B; border-radius:16px; display:flex; flex-direction:column; justify-content:center; align-items:center"><p style="font-size:32px; font-weight:600; color:#F7F6F2">Claims system</p></div>
+  <p id="caption" style="position:absolute; left:128px; top:872px; width:1664px; font-size:24px; color:#4A5563">Custom code that knows Copilot's tool format and the claims system's API and login.</p>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">4 / 22</p></div>
+  <aside>Open with the link to week 1: its slide 9 ended with "Tools / MCP: when the agent calls them, context in other systems". Today we build one of those. Slides 4 to 7 animate into each other: step through them quickly, about 20 seconds each until slide 7. Start simple: one agent, one system, one piece of glue code. Nothing wrong with this on its own.</aside>
+</section>

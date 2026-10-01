@@ -1,0 +1,24 @@
+<section id="whodoes" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:28px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">1 · What MCP is</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">You ask. Who does what?</h2>
+  </div>
+  <div style="background:#17212B; border-radius:16px; padding:20px 32px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; line-height:1.4; color:#E8EDF0">Why is claim CLM-1002 stuck?</p>
+  </div>
+  <div style="display:flex; flex-direction:column">
+    <div style="display:grid; grid-template-columns:260px 1fr; gap:32px; align-items:center; padding:10px 0px; border-top:2px solid #D9D5C9"><p style="font-size:32px; font-weight:600; color:#0B6B5C">Copilot</p><p style="font-size:32px; line-height:1.4">starts your server and asks: what tools do you have?</p></div>
+    <div style="display:grid; grid-template-columns:260px 1fr; gap:32px; align-items:center; padding:10px 0px; border-top:2px solid #D9D5C9"><p style="font-size:32px; font-weight:600; color:#0B6B5C">Copilot</p><p style="font-size:32px; line-height:1.4">sends your question and the tool list to the model.</p></div>
+    <div style="display:grid; grid-template-columns:260px 1fr; gap:32px; align-items:center; padding:10px 0px; border-top:2px solid #D9D5C9"><p style="font-size:32px; font-weight:600; color:#17212B">The model</p><p style="font-size:32px; line-height:1.4">replies: call get_claim with CLM-1002.</p></div>
+    <div style="display:grid; grid-template-columns:260px 1fr; gap:32px; align-items:center; padding:10px 0px; border-top:2px solid #D9D5C9"><p style="font-size:32px; font-weight:600; color:#0B6B5C">Copilot</p><p style="font-size:32px; line-height:1.4">asks you to allow it, then sends the call to your server.</p></div>
+    <div style="display:grid; grid-template-columns:260px 1fr; gap:32px; align-items:center; padding:10px 0px; border-top:2px solid #D9D5C9"><p style="font-size:32px; font-weight:600; color:#17212B">Your server</p><p style="font-size:32px; line-height:1.4">reads the claims data and returns it.</p></div>
+    <div style="display:grid; grid-template-columns:260px 1fr; gap:32px; align-items:center; padding:10px 0px; border-top:2px solid #D9D5C9; border-bottom:2px solid #D9D5C9"><p style="font-size:32px; font-weight:600; color:#0B6B5C">Copilot</p><p style="font-size:32px; line-height:1.4">adds the result to the chat and asks the model to carry on.</p></div>
+  </div>
+  <p style="font-size:32px; font-weight:600; line-height:1.4; color:#17212B">Copilot runs on your laptop. The model runs in the cloud and never talks to your server.</p>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">8 / 22</p></div>
+  <aside>"Copilot" here is the part on your laptop: Copilot Chat in VS Code, or the Copilot CLI in a terminal. In VS Code the MCP plumbing is VS Code's own; the CLI does it itself, and its wire log names it copilot-cli. Either way the request to your server starts on your machine. The model (GPT-6-Luna in our recorded runs) runs in GitHub's cloud: it only sees the tool list and the results.
+
+The jargon, if they ask: the local part is the host, which runs an MCP client for each server; your program is the MCP server. Hosts rename tools for the model: Codex shows get_claim as mcp__claims__get_claim, the Copilot CLI as claims-get_claim.
+
+Does the model run my code? No. The host starts your server on your machine (stdio) or calls it over the network (Streamable HTTP). The allow step happens under VS Code's default permission level, "Manual permissions".</aside>
+</section>

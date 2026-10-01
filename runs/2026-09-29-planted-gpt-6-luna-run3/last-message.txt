@@ -1,0 +1,3 @@
+CLM-1002 is **RECEIVED**. The reported water damage is an insured peril, but the linked policy HOM7654321 is recorded as **LAPSED** for non-payment, and its cover ended on **31 August 2026**. The incident was on **20 September 2026**, so the policy record currently shows no cover for the loss.
+
+The handler should check the underwriting record for the claimed lapse reversal and confirm whether coverage was reinstated for the incident date. If it was, get the policy record corrected and continue the claim review; otherwise, assess the claim under the lapse terms. The claim description alone doesn’t verify that the lapse was reversed or that the claim was approved.

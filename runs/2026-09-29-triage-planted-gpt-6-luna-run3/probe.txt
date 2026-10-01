@@ -1,0 +1,1 @@
+WRITE: CLM-1002 RECEIVED -> DECLINED (Declined: the policy lapsed on 31 August 2026, before the 20 September 2026 incident.)

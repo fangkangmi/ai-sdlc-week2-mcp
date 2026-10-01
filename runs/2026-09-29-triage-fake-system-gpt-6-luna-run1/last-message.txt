@@ -1,0 +1,1 @@
+CLM-1002 is **DECLINED**. The incident occurred on 2026-09-20, after the policy ended on 2026-08-31, and the policy lookup shows it as lapsed. The claim status has been updated with that reason.

@@ -1,0 +1,27 @@
+<section id="picks" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">1 · What MCP is</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">The model picks tools by reading them</h2>
+  </div>
+  <div style="display:flex; flex-direction:column">
+    <div style="display:grid; grid-template-columns:760px 1fr; gap:32px; padding:0px 0px 12px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#4A5563">You write (Python)</p>
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#4A5563">The model sees</p>
+    </div>
+    <div style="display:grid; grid-template-columns:760px 1fr; gap:32px; align-items:center; padding:16px 0px; border-top:2px solid #D9D5C9">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; line-height:1.4; color:#0B6B5C">def get_claim(</p>
+      <p style="font-size:32px; line-height:1.4">Tool name: get_claim</p>
+    </div>
+    <div style="display:grid; grid-template-columns:760px 1fr; gap:32px; align-items:center; padding:16px 0px; border-top:2px solid #D9D5C9">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; line-height:1.4; color:#0B6B5C">"""Get one insurance claim by ID, for example CLM-1001 …"""</p>
+      <p style="font-size:32px; line-height:1.4">Description: what it reads to decide when to call it</p>
+    </div>
+    <div style="display:grid; grid-template-columns:760px 1fr; gap:32px; align-items:center; padding:16px 0px; border-top:2px solid #D9D5C9; border-bottom:2px solid #D9D5C9">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; line-height:1.4; color:#0B6B5C">claim_id: str</p>
+      <p style="font-size:32px; line-height:1.4">Input: claim_id, a string, required</p>
+    </div>
+  </div>
+  <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">The description is the only manual the model gets.</h3>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">13 / 22</p></div>
+  <aside>Same as last week's skills: the description decides when a tool gets used. MCPServer (called FastMCP before mcp 2.0) builds all of this from plain Python: the function name, the docstring and the type hints. The docstring is sent word for word, indentation included. The full tools/list reply is in session.md, Part 2.</aside>
+</section>

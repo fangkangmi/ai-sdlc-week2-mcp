@@ -1,0 +1,23 @@
+<section id="build2" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">2 · Live demo</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">Three quick tries</h2>
+  </div>
+  <table style="font-size:32px; color:#17212B; width:1664px">
+    <tr style="background:#E4E1D8"><th style="width:45%; text-align:left">Try</th><th style="width:55%; text-align:left">Watch for</th></tr>
+    <tr><td>Ask for claim CLM-1010</td><td>Does the error message help it?</td></tr>
+    <tr><td>Rename to fetch, docstring "Gets a record."</td><td>Does it still pick the right tool?</td></tr>
+    <tr><td>Leave out "Use the claims tools"</td><td>Does it search the repo instead?</td></tr>
+  </table>
+  <div style="background:#DDEFEA; border-radius:16px; padding:32px">
+    <p style="font-size:32px; line-height:1.4; color:#17212B"><b>Name:</b> what it does. <b>Description:</b> when to use it. <b>Inputs:</b> specific, claim_id not id. <b>Errors:</b> how to fix the call.</p>
+  </div>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">17 / 22</p></div>
+  <aside>Same chat, about a minute each; skip this slide if you're late, it's Part 4 of the homework. One run is an anecdote. What the recorded runs did (GPT-6-Luna, one run each): asked "What's the status of claim CLM-1001?" with no hint, Codex searched the repo and never touched the claims tools; the Copilot CLI called get_claim straight away. Codex hides MCP tools behind a tool search by default; Copilot shows them to the model up front.
+
+From the Copilot runs: in all 4 triage runs it called lookup_policy at the same time as get_claim, before it knew the policy number. It guessed "CLM-1002", "", "", and once "HOM1234567": a real policy that belongs to a different customer, which it read. The error message, or the claim that came back, put it right each time. Design fix: return the policy with the claim, so there is nothing to guess.
+
+One mcp 2.x gotcha worth showing: raise ToolError for errors the model should read. Any other exception (a plain ValueError, say) counts as a crash, and the model sees only "Error executing tool get_claim": the message that would have taught it is thrown away.
+
+The checklist comes from Anthropic's "Writing tools for agents": a few tools shaped around the task beat one tool per API endpoint, and error messages should teach.</aside>
+</section>

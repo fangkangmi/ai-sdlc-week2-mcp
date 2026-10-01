@@ -1,0 +1,2 @@
+mcp>=2.2
+ipykernel  # homework notebook only

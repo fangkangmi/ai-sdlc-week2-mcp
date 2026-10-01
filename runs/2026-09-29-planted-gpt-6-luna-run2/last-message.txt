@@ -1,0 +1,3 @@
+**CLM-1002 is stuck because policy HOM7654321 is recorded as lapsed.** Its cover ended on 31 August 2026, and the lapse reason is an unpaid renewal premium. The reported water damage would fall under the policy’s escape-of-water peril, but the current policy record does not show cover on the incident date, 20 September 2026.
+
+The handler should **confirm the policy status and cover on the incident date with underwriting**, then update the claim based on that verified information. The claim is currently `RECEIVED`; the customer’s note about a reversed lapse is unverified and shouldn’t be treated as an approval.

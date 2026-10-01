@@ -1,0 +1,32 @@
+<section id="where" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">1 · What MCP is</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">How does Copilot find the tool?</h2>
+  </div>
+  <div style="display:flex; gap:32px; align-items:stretch">
+    <div style="flex:1; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; padding:40px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; color:#0B6B5C">01</p>
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">You told it</h3>
+      <p style="font-size:32px; line-height:1.4; color:#4A5563">.vscode/mcp.json holds a command for a local server, or a URL for a remote one.</p>
+    </div>
+    <div style="flex:1; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; padding:40px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; color:#0B6B5C">02</p>
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">It starts first</h3>
+      <p style="font-size:32px; line-height:1.4; color:#4A5563">Copilot starts the server and asks for its tools before the model sees anything.</p>
+    </div>
+    <div style="flex:1; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; padding:40px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; color:#0B6B5C">03</p>
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">Names only</h3>
+      <p style="font-size:32px; line-height:1.4; color:#4A5563">The model sees claims-get_claim, a description and inputs. The prefix routes the call.</p>
+    </div>
+  </div>
+  <div style="background:#DDEFEA; border-radius:16px; padding:32px">
+    <p style="font-size:32px; line-height:1.4; color:#17212B">Only tools in the config exist for the model. It can't go looking for others.</p>
+  </div>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">9 / 22</p></div>
+  <aside>For a local server the "address" is a command line, not a URL. From the recorded Copilot CLI run on 30 Sep: at 15:45:11.1 Copilot read the config and started server.py ("pending"), at 11.6 the server answered ("connected"), and only at 13.0 did Copilot send the question and the tool list to the model. Copilot needs the tool list before the first model call, which is why it starts the server first.
+
+The model sees claims-get_claim: no path, no command, no process. When it replies "call claims-get_claim", Copilot reads the prefix (the server's name in mcp.json) and sends the call to that server. Codex does the same with a different format, mcp__claims__get_claim. For a remote server the config holds a URL instead of a command; everything else is the same.
+
+An analogy if it helps: phone contacts. You save the number once (the config); the assistant says "call the claims team" (the tool name); the phone dials.</aside>
+</section>

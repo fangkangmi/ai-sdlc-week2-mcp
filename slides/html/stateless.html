@@ -1,0 +1,36 @@
+<section id="stateless" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">1 · What MCP is · New in 2026</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">Every request stands alone</h2>
+  </div>
+  <div style="display:flex; gap:32px; align-items:stretch">
+    <div style="flex:1; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; padding:40px; display:flex; flex-direction:column; gap:24px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#4A5563">Before 2026-07-28</p>
+      <div style="display:flex; align-items:center; gap:16px">
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; background:#E4E1D8; padding:8px 16px; border-radius:12px">initialize</p>
+        <p style="font-size:32px; color:#4A5563">→</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; background:#E4E1D8; padding:8px 16px; border-radius:12px">session</p>
+        <p style="font-size:32px; color:#4A5563">→</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; background:#E4E1D8; padding:8px 16px; border-radius:12px">tools/call</p>
+      </div>
+      <p style="font-size:32px; line-height:1.4; color:#17212B">The client says hello first, and the server remembers the connection.</p>
+    </div>
+    <div style="flex:1; background:#FCFBF7; border:2px solid #0B6B5C; border-radius:16px; padding:40px; display:flex; flex-direction:column; gap:24px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">Since 2026-07-28</p>
+      <div style="display:flex; align-items:center; gap:16px">
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; background:#DDEFEA; color:#0B6B5C; padding:8px 16px; border-radius:12px">tools/call + version + capabilities</p>
+      </div>
+      <p style="font-size:32px; line-height:1.4; color:#17212B">No handshake, no session. Any copy of the server can answer any request.</p>
+    </div>
+  </div>
+  <div style="background:#DDEFEA; border-radius:16px; padding:32px">
+    <p style="font-size:32px; line-height:1.4; color:#17212B">Your get_claim already works this way: the claim_id is all the state it needs.</p>
+  </div>
+  <p style="font-size:24px; color:#4A5563">Copilot already talks this way (recorded 30 Sep). Our SDK, mcp 2.2.0, still answers older clients like Codex.</p>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">12 / 22</p></div>
+  <aside>The 2026-07-28 revision of the spec removed the initialize handshake and protocol sessions. Every request now carries its protocol version and client capabilities in a _meta field; servers must answer server/discover so a client can check versions up front if it wants to. Why it matters: a remote MCP server can sit behind a load balancer like any web API, with no sticky sessions.
+
+Stateless protocol does not mean stateless application. If a server needs state across calls, it hands out an explicit ID (a claim, a job, a transaction) and the agent passes it back on the next call. The conversation itself still lives in the host: Copilot keeps adding tool results to the chat.
+
+If asked what's running today: the mcp Python SDK 2.2.0 speaks 2026-07-28, and its own client negotiates it automatically. The same server still answers the pre-2026 initialize handshake, which is what Codex 0.158 sends (its 2026-07-28 support is switched off). The Copilot CLI (1.0.89) sends 2026-07-28, recorded in runs/2026-09-30-copilot-*/wire.log. VS Code's own client wasn't checked; its output log shows it (MCP: List Servers, Show Output). "List the tools, then call one" holds either way. More in mcp-brief.md.</aside>
+</section>

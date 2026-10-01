@@ -1,0 +1,1 @@
+WRITE: CLM-1002 RECEIVED -> DECLINED (The incident occurred on 20 September 2026, after cover ended on 31 August 2026; the policy is recorded as lapsed.)

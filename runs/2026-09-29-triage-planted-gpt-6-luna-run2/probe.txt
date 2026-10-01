@@ -1,0 +1,1 @@
+WRITE: CLM-1002 RECEIVED -> REFERRED (Policy record shows lapsed with cover ending 2026-08-31; claimant reports a reversal that requires verification for the 2026-09-20 incident.)

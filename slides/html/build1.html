@@ -1,0 +1,33 @@
+<section id="build1" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">2 · Live demo · 8 min</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">Copilot calls our server</h2>
+  </div>
+  <div style="display:flex; gap:32px; align-items:start">
+    <div style="flex:1; display:flex; flex-direction:column">
+      <div style="display:grid; grid-template-columns:72px 1fr; gap:24px; align-items:start; padding:12px 0px; border-top:2px solid #D9D5C9"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; font-weight:600; color:#0B6B5C">01</p><p style="font-size:32px; line-height:1.4">The server: three tools, about 50 lines</p></div>
+      <div style="display:grid; grid-template-columns:72px 1fr; gap:24px; align-items:start; padding:12px 0px; border-top:2px solid #D9D5C9"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; font-weight:600; color:#0B6B5C">02</p><p style="font-size:32px; line-height:1.4">mcp.json points at it, through wiretap.py</p></div>
+      <div style="display:grid; grid-template-columns:72px 1fr; gap:24px; align-items:start; padding:12px 0px; border-top:2px solid #D9D5C9"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; font-weight:600; color:#0B6B5C">03</p><p style="font-size:32px; line-height:1.4">Ask: "What's the status of claim CLM-1001? Use the claims tools."</p></div>
+      <div style="display:grid; grid-template-columns:72px 1fr; gap:24px; align-items:start; padding:12px 0px; border-top:2px solid #D9D5C9"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; font-weight:600; color:#0B6B5C">04</p><p style="font-size:32px; line-height:1.4">Watch the approval prompt, wire.log, the answer</p></div>
+      <div style="display:grid; grid-template-columns:72px 1fr; gap:24px; align-items:start; padding:12px 0px; border-top:2px solid #D9D5C9; border-bottom:2px solid #D9D5C9"><p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:32px; font-weight:600; color:#0B6B5C">05</p><p style="font-size:32px; line-height:1.4">Ask: "Is CLM-1001 covered by its policy?"</p></div>
+    </div>
+    <div style="width:640px; background:#17212B; border-radius:16px; padding:32px 40px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#5EC4B0">.vscode/mcp.json</p>
+      <div style="display:flex; flex-direction:column">
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">{"servers": {</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;<span style="color:#5EC4B0">"claims"</span>: {</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;&#160;"type": "stdio",</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;&#160;"command": "&lt;python&gt;",</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;&#160;"args": [</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;<span style="color:#5EC4B0">"&lt;path&gt;/wiretap.py"</span>,</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;"&lt;path&gt;/wire.log",</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;"&lt;python&gt;",</p>
+        <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; line-height:1.5; color:#E8EDF0; white-space:nowrap">&#160;&#160;&#160;&#160;&#160;&#160;"&lt;path&gt;/server.py"]}}}</p>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">16 / 22</p></div>
+  <aside>You drive, on your machine; they watch. In Configure Tools, untick update_claim_status before you start: a question doesn't need a write tool, and the second demo turns it on. Before the session: the claims server in a folder outside the demo repo, mcp.json in the repo's .vscode, wire.log open in a split beside Copilot Chat (session.md, Part 2).
+
+Step 1: scroll server.py, don't read it out; they write it in the homework. Step 4: expand the approval prompt to show the arguments. In wire.log, point at server/discover, tools/list and tools/call as they appear: slide 11, happening for real. Step 5: nobody told it to call two tools in order; it chains get_claim then lookup_policy by itself. Park that: how it decides is next week. In the recorded Copilot runs it sometimes called lookup_policy early with a guessed policy number; if that happens live, point at the error message putting it right.</aside>
+</section>

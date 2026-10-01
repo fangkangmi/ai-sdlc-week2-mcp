@@ -1,0 +1,4 @@
+lookup_policy {"policy_number": "HOM1234567"} -> ok
+get_claim {"claim_id": "CLM-1002"} -> ok
+lookup_policy {"policy_number": "HOM7654321"} -> ok
+update_claim_status {"claim_id": "CLM-1002", "status": "DECLINED", "reason": "Incident occurred on 2026-09-20, after policy cover ended on 2026-08-31; policy lookup shows lapsed."} -> ok

@@ -1,0 +1,3 @@
+get_claim {"claim_id": "CLM-1002"} -> ok
+lookup_policy {"policy_number": "HOM7654321"} -> ok
+update_claim_status {"claim_id": "CLM-1002", "status": "REFERRED", "reason": "Policy record shows lapsed with cover ending 2026-08-31; claimant reports a reversal that requires verification for the 2026-09-20 incident."} -> ok

@@ -1,0 +1,18 @@
+<section id="controls" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">2 · Live demo</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">Controls that don't depend on the model</h2>
+  </div>
+  <div style="display:flex; flex-direction:column">
+    <div style="display:grid; grid-template-columns:520px 1fr; gap:32px; align-items:center; padding:20px 0px; border-top:2px solid #D9D5C9"><h3 style="font-size:32px; font-weight:600; line-height:1.4; color:#0B6B5C">Only the tools it needs</h3><p style="font-size:32px; line-height:1.4">A question never needs update_claim_status.</p></div>
+    <div style="display:grid; grid-template-columns:520px 1fr; gap:32px; align-items:center; padding:20px 0px; border-top:2px solid #D9D5C9"><h3 style="font-size:32px; font-weight:600; line-height:1.4; color:#0B6B5C">You approve writes</h3><p style="font-size:32px; line-height:1.4">Anything that changes data waits for your click.</p></div>
+    <div style="display:grid; grid-template-columns:520px 1fr; gap:32px; align-items:center; padding:20px 0px; border-top:2px solid #D9D5C9"><h3 style="font-size:32px; font-weight:600; line-height:1.4; color:#0B6B5C">Rules in code</h3><p style="font-size:32px; line-height:1.4">The server refuses to approve a claim on a lapsed policy.</p></div>
+    <div style="display:grid; grid-template-columns:520px 1fr; gap:32px; align-items:center; padding:20px 0px; border-top:2px solid #D9D5C9"><h3 style="font-size:32px; font-weight:600; line-height:1.4; color:#0B6B5C">Trust servers like code</h3><p style="font-size:32px; line-height:1.4">A server's descriptions go straight into your context.</p></div>
+    <div style="display:grid; grid-template-columns:520px 1fr; gap:32px; align-items:center; padding:20px 0px; border-top:2px solid #D9D5C9; border-bottom:2px solid #D9D5C9"><h3 style="font-size:32px; font-weight:600; line-height:1.4; color:#0B6B5C">Results are prompts</h3><p style="font-size:32px; line-height:1.4">What a tool returns goes to the model provider.</p></div>
+  </div>
+  <p style="font-size:32px; line-height:1.4; color:#17212B">Week 1: instructions are requests. These are the controls that hold.</p>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">20 / 22</p></div>
+  <aside>You did the first one in the demo: update_claim_status stayed off until the triage task needed it (Configure Tools). Week 1 slide 13 again (and the homework's Exercise 3): instructions are requests, and these are the controls that actually hold. If time allows, add the four-line guard from session.md Part 2 to update_claim_status and re-run the demo: approving CLM-1002 now fails with "Cannot approve CLM-1002: its policy is LAPSED. Refer it instead."
+
+On third-party servers: the author writes text straight into your agent's context through the tool descriptions (and, with Skills over MCP, whole SKILL.md files), so install only servers you'd let into your repo. On data: if a tool returns real customer data, that data goes to the model provider, and the same policy applies as for prompts.</aside>
+</section>

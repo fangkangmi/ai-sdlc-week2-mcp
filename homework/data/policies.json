@@ -1,0 +1,27 @@
+{
+  "HOM1234567": {
+    "product": "home",
+    "status": "ACTIVE",
+    "cover_start": "2026-03-01",
+    "cover_end": "2027-02-28",
+    "covered_perils": ["escape of water", "fire", "storm", "theft"],
+    "excess_gbp": "350.00"
+  },
+  "HOM7654321": {
+    "product": "home",
+    "status": "LAPSED",
+    "cover_start": "2025-09-01",
+    "cover_end": "2026-08-31",
+    "lapse_reason": "Renewal premium not paid",
+    "covered_perils": ["escape of water", "fire", "storm", "theft"],
+    "excess_gbp": "250.00"
+  },
+  "MOT2468013": {
+    "product": "motor",
+    "status": "ACTIVE",
+    "cover_start": "2026-06-15",
+    "cover_end": "2027-06-14",
+    "covered_perils": ["accidental damage", "fire", "theft", "third party"],
+    "excess_gbp": "500.00"
+  }
+}

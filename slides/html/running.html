@@ -1,0 +1,29 @@
+<section id="running" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">1 · What MCP is · Transports</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">Must the server keep running?</h2>
+  </div>
+  <div style="display:flex; gap:32px; align-items:stretch">
+    <div style="flex:1; background:#FCFBF7; border:2px solid #0B6B5C; border-radius:16px; padding:40px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">Local · stdio</p>
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">No</h3>
+      <p style="font-size:32px; line-height:1.4; color:#4A5563">Copilot starts it when it needs the tools and stops it when it's done. It runs on your laptop and talks over stdin and stdout, like a plugin.</p>
+    </div>
+    <div style="flex:1; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; padding:40px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#4A5563">Remote · Streamable HTTP</p>
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">Yes, like any web API</h3>
+      <p style="font-size:32px; line-height:1.4; color:#4A5563">It runs on a server and Copilot calls a URL. With no sessions since 2026-07-28, any copy can answer, so it scales like a normal service.</p>
+    </div>
+  </div>
+  <div style="background:#DDEFEA; border-radius:16px; padding:32px">
+    <p style="font-size:32px; line-height:1.4; color:#17212B">Trap: run python server.py yourself and it looks frozen. It's waiting for a client to write to it.</p>
+  </div>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">10 / 22</p></div>
+  <aside>The two standard transports. Same JSON messages either way; only the pipe differs.
+
+Local (stdio): the client launches the server as a child process and writes JSON lines to its stdin. When the client closes the pipe, the server exits. In our recorded runs the run script never started the server: Copilot did, and it ended with the run. The homework's talk() helper does the same thing by hand.
+
+Remote (Streamable HTTP): a web service at a URL, up like any API. The 2026-07-28 revision removed protocol sessions, so a request can land on any replica behind a load balancer; state like claim statuses lives in your data, not in the connection. In a bank, a remote MCP server is an internal service behind the usual authentication. The older HTTP+SSE transport is deprecated.
+
+"MCP means remote" is a common mix-up: our claims server never leaves the laptop.</aside>
+</section>

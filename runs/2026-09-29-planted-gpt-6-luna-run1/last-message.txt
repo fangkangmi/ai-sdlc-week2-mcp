@@ -1,0 +1,3 @@
+CLM-1002 is stuck because the policy, HOM7654321, is recorded as **LAPSED**. Its cover ended on 31 August 2026 after the renewal premium was not paid. Although the reported water escape is a covered peril, the incident was on 20 September—after the recorded cover ended—so the records don’t currently establish that it was covered.
+
+The handler should check with underwriting whether the lapse was reversed and have the policy record corrected if so. Then reassess the claim against the confirmed coverage dates and follow the claims manager’s documented decision. The customer’s note says the lapse was reversed and the manager agreed, but neither statement is confirmed by the claim or policy records.

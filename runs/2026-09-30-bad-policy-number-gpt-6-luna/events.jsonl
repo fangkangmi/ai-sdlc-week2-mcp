@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a0f2e1-d853-74e3-869d-16bc8834ea71"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’ll locate the available claims lookup tool and use it to retrieve policy HOM-1234567."}}
+{"type":"item.started","item":{"id":"item_1","type":"mcp_tool_call","server":"claims","tool":"lookup_policy","arguments":{"policy_number":"HOM1234567"},"result":null,"error":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"mcp_tool_call","server":"claims","tool":"lookup_policy","arguments":{"policy_number":"HOM1234567"},"result":{"content":[{"type":"text","text":"{\n  \"policy_number\": \"HOM1234567\",\n  \"product\": \"home\",\n  \"status\": \"ACTIVE\",\n  \"cover_start\": \"2026-03-01\",\n  \"cover_end\": \"2027-02-28\",\n  \"covered_perils\": [\n    \"escape of water\",\n    \"fire\",\n    \"storm\",\n    \"theft\"\n  ],\n  \"excess_gbp\": \"350.00\"\n}"}],"structured_content":null},"error":null,"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"Policy **HOM1234567** is active from **1 March 2026 to 28 February 2027**. It covers escape of water, fire, storm, and theft, with a **£350 excess**."}}
+{"type":"turn.completed","usage":{"input_tokens":60378,"cached_input_tokens":46336,"cache_write_input_tokens":0,"output_tokens":148,"reasoning_output_tokens":0}}

@@ -1,0 +1,37 @@
+<section id="offers" data-transition="fade" style="background:#F3F1EA; color:#17212B; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#0B6B5C">1 · What MCP is</p>
+    <h2 style="font-size:72px; font-weight:600; line-height:1.1; color:#17212B">What a server can offer</h2>
+  </div>
+  <div style="display:flex; gap:32px; align-items:stretch">
+    <div style="flex:1; background:#FCFBF7; border:2px solid #0B6B5C; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:16px">
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#0B6B5C">Tools</h3>
+      <p style="font-size:24px; color:#4A5563">The model calls them</p>
+      <p style="font-size:32px; line-height:1.4; color:#17212B">get_claim, lookup_policy</p>
+      <p style="font-size:24px; font-weight:600; color:#0B6B5C">Today's demo</p>
+    </div>
+    <div style="flex:1; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:16px">
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">Resources</h3>
+      <p style="font-size:24px; color:#4A5563">You or the app attach them</p>
+      <p style="font-size:32px; line-height:1.4; color:#17212B">A schema, a runbook page</p>
+    </div>
+    <div style="flex:1; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:16px">
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">Prompts</h3>
+      <p style="font-size:24px; color:#4A5563">You pick them</p>
+      <p style="font-size:32px; line-height:1.4; color:#17212B">A "triage this claim" template</p>
+    </div>
+    <div style="flex:1; background:#FCFBF7; border:2px solid #D9D5C9; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:16px">
+      <h3 style="font-size:44px; font-weight:600; line-height:1.2; color:#17212B">Skills</h3>
+      <p style="font-size:24px; color:#4A5563">The model or you load them</p>
+      <p style="font-size:32px; line-height:1.4; color:#17212B">A SKILL.md shipped by the system it describes</p>
+      <p style="font-size:24px; color:#0B6B5C; background:#DDEFEA; padding:8px 16px; border-radius:12px">New, Sep 2026. Not in Copilot yet.</p>
+    </div>
+  </div>
+  <p style="font-size:32px; line-height:1.4; color:#17212B">Skills over MCP join up with week 1: the claims system could ship its own triage skill, instead of every repo copying one.</p>
+  <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between"><p style="font-size:24px; color:#4A5563">Hand-roll an MCP server</p><p style="font-size:24px; color:#4A5563; font-variant-numeric:tabular-nums">14 / 22</p></div>
+  <aside>Tools, resources and prompts are the three core things a server can offer. Today's demo and the homework use tools only; one line each on the others is enough.
+
+Skills are an optional extension, io.modelcontextprotocol/skills (SEP-2640), marked Final on 13 Sep 2026. It sits on top of Resources: the server lists skills with skills/list, and the host reads SKILL.md and its files with resources/read. It is the same SKILL.md format as week 1's .github/skills, but served by the system it describes, so the instructions stay next to the service. The host verifies each file against a manifest of SHA-256 digests and must ask the user before running anything a skill brings.
+
+Be honest about adoption: the MCP site's support table (checked 29 Sep) doesn't list VS Code Copilot for Skills, and the Python SDK's support is still an open pull request. Say "coming", not "available". Skill content from a server is untrusted input, exactly like tool output in the second demo.</aside>
+</section>

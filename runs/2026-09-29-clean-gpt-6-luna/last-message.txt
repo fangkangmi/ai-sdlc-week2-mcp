@@ -1,0 +1,3 @@
+CLM-1002 is still **RECEIVED**. The incident was on 20 September 2026, but the linked policy HOM7654321 **lapsed on 31 August 2026** because the renewal premium was not paid. Although escape of water is a covered peril, the policy was not active on the incident date, so that appears to be the blocker.
+
+The handler should confirm the lapse and incident dates against the policy record, then refer the claim for a coverage decision under the applicable process. The records alone don’t establish the final claim outcome.
