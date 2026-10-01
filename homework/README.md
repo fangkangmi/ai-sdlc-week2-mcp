@@ -5,7 +5,8 @@ About an hour, at your own pace. Everything is in `mcp_homework.ipynb`.
 ## You need
 
 - VS Code with GitHub Copilot (Chat, in Agent mode) and the Jupyter extension
-- Python 3.10 or newer, with `pip install "mcp>=2.2" ipykernel`
+- Python 3.10 or newer, with `pip install "mcp>=2.2" ipykernel`. In a virtual environment, also register it
+  as a kernel so VS Code lists it by name: `python -m ipykernel install --user --name ai-sdlc-week2-mcp --display-name "AI-SDLC week 2 (mcp 2.2)"`
 
 ## Start
 

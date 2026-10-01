@@ -17,6 +17,13 @@ python demo.py check                   # should end with READY
 python demo.py setup ~/claims-demo     # Windows: python demo.py setup %USERPROFILE%\claims-demo
 ```
 
+To run the homework notebook from the same environment, register it as a Jupyter kernel once, then pick
+**AI-SDLC week 2 (mcp 2.2)** as the notebook's kernel in VS Code:
+
+```bash
+python -m ipykernel install --user --name ai-sdlc-week2-mcp --display-name "AI-SDLC week 2 (mcp 2.2)"
+```
+
 Stage the demo outside this repo (`demo.py` refuses otherwise), so Copilot doesn't read the notes in
 here as instructions. Using an AI agent to set it up? Ask it to follow [`AGENTS.md`](AGENTS.md).
 

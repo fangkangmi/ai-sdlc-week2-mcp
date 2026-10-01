@@ -15,6 +15,8 @@ demo, follow the steps below. Ask the user where a step says so.
    pip or proxy configuration yourself.
 3. Run the check with the venv's Python: `.venv/bin/python demo.py check` (Windows:
    `.venv\Scripts\python demo.py check`). It must end with `READY`. If not, fix what it marks with `<-`.
+   For the homework notebook, also register the venv as a Jupyter kernel with the venv's Python:
+   `python -m ipykernel install --user --name ai-sdlc-week2-mcp --display-name "AI-SDLC week 2 (mcp 2.2)"`. It then shows up in VS Code as **AI-SDLC week 2 (mcp 2.2)**.
 4. Ask the user where to stage the demo. Default: `~/claims-demo` (Windows: `%USERPROFILE%\claims-demo`).
    It must be outside this repo. Then run `<venv python> demo.py setup <folder>`.
 5. Give the user these steps; they happen in VS Code's interface:
