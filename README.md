@@ -50,6 +50,10 @@ with you at the end. It's a notebook in seven parts (setup check, write `get_cla
 by hand, connect Copilot, tool design, the planted note, design their own tool), with answers at the
 bottom. It needs no API key: their own Copilot is the client.
 
+The worked version, with every exercise done and every cell run, is
+[`solutions/mcp_homework_solved.ipynb`](solutions/mcp_homework_solved.ipynb). Its Copilot answers
+(Parts 3 to 5) quote the recorded runs in `runs/`. It's outside `homework/`, so the zip stays the exercise.
+
 ## What's here
 
 | Path | What it is |
@@ -60,10 +64,11 @@ bottom. It needs no API key: their own Copilot is the client.
 | `wiretap.py` | Sits between Copilot and the server and logs every MCP message to `wire.log` |
 | `planted-description*.txt` | The customer's note for the second demo (a deliberate prompt-injection payload) |
 | `homework/` | The colleague's notebook kit |
+| `solutions/` | The homework notebook with every exercise done and run |
 | `session.md`, `mcp-brief.md` | The coach's plan and background |
 | `slides/` | Source of the deck (one HTML file per slide, speaker notes included) |
-| `runs/` | 19 recorded runs of the demo through Codex and the Copilot CLI (GPT-6-Luna, 29–30 Sep 2026) |
-| `run-mcp-demo.sh`, `run-copilot-demo.sh`, `probe_claims.py` | Record more runs (bash; needs the `codex` or `copilot` CLI) |
+| `runs/` | 22 recorded runs of the demo through Codex and the Copilot CLI (29 Sep to 1 Oct 2026; GPT-6-Luna in all but one) |
+| `run-mcp-demo.sh`, `run-copilot-demo.sh`, `probe_claims.py` | Record more runs (bash; needs the `codex` or `copilot` CLI). `SERVER=<folder>` runs a changed copy of the server |
 
 ## Requirements
 

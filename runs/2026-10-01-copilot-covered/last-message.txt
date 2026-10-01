@@ -1,0 +1,8 @@
+CLM-1001 appears to be covered under policy HOM1234567, but there’s a likely excess.
+
+- Policy status: ACTIVE
+- Cover dates: 2026-03-01 to 2027-02-28
+- Covered peril: “escape of water” matches the claim description
+- Excess: £350.00
+
+So the claim is likely covered for the incident, but the claimant would likely need to pay the first £350 of the £450 claim, leaving about £100 payable by the insurer.

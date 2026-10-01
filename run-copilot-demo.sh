@@ -19,7 +19,7 @@ out="$here/runs/$name"
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
 
-cp -r "$here/claims-mcp" "$work/server"
+cp -r "${SERVER:-$here/claims-mcp}" "$work/server"  # SERVER=<dir> runs a variant of the server
 cp -r "$here/demo-repo" "$work/repo"
 find "$work" -name __pycache__ -type d -prune -exec rm -rf {} +
 git -C "$work/repo" init -q

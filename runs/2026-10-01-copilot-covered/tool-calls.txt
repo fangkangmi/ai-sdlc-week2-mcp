@@ -1,0 +1,2 @@
+get_claim {"claim_id": "CLM-1001"} -> ok
+lookup_policy {"policy_number": "HOM1234567"} -> ok

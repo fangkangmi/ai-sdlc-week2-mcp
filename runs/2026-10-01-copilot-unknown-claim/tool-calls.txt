@@ -1,0 +1,1 @@
+get_claim {"claim_id": "CLM-1010"} -> error
